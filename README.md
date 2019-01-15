@@ -1,3 +1,3 @@
 # Dylan and Huy's Website
 
-# Best Traveling Company in the WORLD!
+# Best Traveling Company in FREMONT!
