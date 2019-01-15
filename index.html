@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Dylan and Huy's Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="css/homepage.css">
+<script src="js/homepage.js"></script>
+
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-blue w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px solid rgb(110, 229, 245)">Close Menu</a>
+  <div class="w3-container">
+       <h3 class="w3-padding-64"><b>Dylan and Huy's Website
+        <h4><p id="date"></p>
+      <script>
+	
+	var currentDate = new Date(),
+	    month = currentDate.getMonth() + 1,
+      day = currentDate.getDate(),
+      year = currentDate.getFullYear();
+  document.write(month + "/" + day + "/" + year)
+  </script>
+  <br>
+  <script>
+   var currentTime = new Date(),
+      hours = currentTime.getHours(),
+      minutes = currentTime.getMinutes();
+
+	if (minutes < 10) {
+	 minutes = "0" + minutes;
+  }
+
+	var suffix = "AM";
+	if (hours >= 12) {
+    suffix = "PM";
+    hours = hours - 12;
+	}
+	if (hours == 0) {
+	 hours = 12;
+	}
+
+	document.write(hours + ":" + minutes + " " + suffix);
+      </script>
+      </h4></b></h3>
+    
+  </div>
+  <div class="w3-bar-block">
+    <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="services.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Services</a> 
+    <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact Us</a>
+    <a href="reviews.php" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Reviews</a>
+    <a onclick="document.body.style.backgroundColor = '#88CBFF'; "class="w3-bar-item w3-button w3-hover-white">Change Background To Light Blue!</button></a>
+    <a onclick="document.body.style.backgroundColor = '#FFFFFF'; "class="w3-bar-item w3-button w3-hover-white">Change to White!</a>
+
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Explore With Us!</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Popular Places To Visit In Fremont</b></h1>
+    <h1 class="w3-xxxlarge w3-text-blue"><b>Showcase</b></h1>
+    <h5>Click on the images to view more information!</h5>
+    <hr style="width:50px;border:5px solid rgb(0, 119, 255)" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <h2>Mission Peak</h2>
+      <img src="http://www.redwoodhikes.com/EastBay/HiddenValley1.jpg" onclick="onClick(this)" id="mp" alt="Mission Peak is a wonderful place if you want a long peaceful hike with beautiful sunsets and views of nature for miles around. It is a breathtaking experience that is popular with many local hikers,bicyclist and sightseers every weekend and if you reach the summit you can see the famous mission peeker pole which is the most famous and geotagged location in all of fremont.">
+      <h2>Coyote Hills</h2>
+      <img src="https://goldengateaudubon.org/wp-content/uploads/CH-Green-Hills-JerryTing.jpg" id="ch" onclick="onClick(this)" alt="Coyote Hills is a region park comprised of mostly marshland and rolling grassland covered hills with breathtaking views coupled with a breathtaking view once you reach the tops of the hills.Some popular visitor activities include bicycling, walking, bird watching, jogging, nature exploration, and picnicking.The park also has a dedicated visitor center,picnic areas,trails and a wildlife refuge all for public access.">
+    </div>
+
+    <div class="w3-half">
+      <h2>Central Park</h2>
+      <img src="http://www.npu.edu/sites/default/files/DJI_0049.jpg" id="cp" onclick="onClick(this)" alt="Central Park is a enormous park with many fun and enjoyable things to do as it includes,picnic sites,event and catering services,boating areas and storage,an aqua adventure waterpark,4 playgrounds,6 softball fields,10 soccer fields,18 tennis courts,2 basketball courts,Fishing areas,a Dog Park,golf courses and driving range and to top if all off a 2 mile walking path good for jogging and general exercise.">
+      <h2>Quarry Lakes</h2>
+      <img src="https://i.ytimg.com/vi/Gt9xdGnzwpM/maxresdefault.jpg" id="ql" onclick="onClick(this)" alt="Quarry Lakes is a beautiful water oriented recreation area.It offers a variety of recreational activities that include picnicking,boating,swimming,fishing and also areas for hiking and wildlife viewing. Of the many recreation features it is also a great place for dog walking and scavenger hunts ">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Made by Dylan Pham and Huy Ngo 
+
+</body>
+</html>
